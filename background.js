@@ -12,6 +12,6 @@ chrome.alarms.onAlarm.addListener(f => {
       chrome.notifications.create(undefined, opt, undefined);
     }));
 });
-chrome.runtime.onInstalled.addListener(function () {
+chrome.runtime.onInstalled.addListener(f => {
   chrome.alarms.create("that-guy", { delayInMinutes: 15, periodInMinutes: 10 });
 });
