@@ -1,5 +1,3 @@
-// https://api.stackexchange.com/docs/questions#page=1&pagesize=10&order=desc&sort=creation&filter=!C(o*VkSJu.8H6iV)T
-// https://api.stackexchange.com/2.2/questions?page=1&pagesize=10&order=desc&sort=creation&site=stackoverflow&filter=!)8aDKR.(yQrG6bS
 chrome.alarms.onAlarm.addListener(f => {
   fetch("https://api.stackexchange.com/2.2/questions?page=1&pagesize=10&order=desc&sort=creation&site=stackoverflow&filter=!C(o*VkSJu.8H6iV)T")
     .then(r => r.json().then(d => {
