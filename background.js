@@ -1,19 +1,17 @@
+// https://api.stackexchange.com/docs/questions#page=1&pagesize=10&order=desc&sort=creation&filter=!C(o*VkSJu.8H6iV)T
 // https://api.stackexchange.com/2.2/questions?page=1&pagesize=10&order=desc&sort=creation&site=stackoverflow&filter=!)8aDKR.(yQrG6bS
 chrome.alarms.onAlarm.addListener(f => {
-  fetch("https://api.stackexchange.com/2.2/questions?page=1&pagesize=1&order=desc&sort=creation&site=stackoverflow&filter=!)8aDKR.(yQrG6bS")
+  fetch("https://api.stackexchange.com/2.2/questions?page=1&pagesize=10&order=desc&sort=creation&site=stackoverflow&filter=!C(o*VkSJu.8H6iV)T")
     .then(r => r.json().then(d => {
-      var q = d.items[0].title;
-      console.log(q);
+      var question = d.items[0].title;
+      var body = d.items[0].body;
       var opt = {
         type: "basic",
-        title: "Hey",
-        message: q,
+        title: question,
+        message: body,
         iconUrl: "./peng.png"
       };
-      chrome.notifications.create(undefined, opt, function (id) {
-        console.log(id);
-      }
-      );
+      chrome.notifications.create(undefined, opt, undefined);
     }));
 });
 chrome.runtime.onInstalled.addListener(function () {
