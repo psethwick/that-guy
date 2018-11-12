@@ -2,7 +2,7 @@
     "name": "That Guy",
     "version": "1.0",
     "description": "He should probably google it",
-    "permissions": ["alarms","notifications"],
+    "permissions": ["alarms","tts"],
     "background": {
 	    "scripts": ["background.js"],
 	    "persistant": false
